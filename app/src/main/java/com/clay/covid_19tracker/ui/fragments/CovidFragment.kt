@@ -281,4 +281,7 @@ class CovidFragment : Fragment(R.layout.fragment_covid) {
         sparkAdapter = CovidSparkAdapter()
         sparkChart.adapter = sparkAdapter
     }
+
+
+
 }

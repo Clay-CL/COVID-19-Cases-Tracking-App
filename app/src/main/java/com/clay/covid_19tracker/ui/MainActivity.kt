@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import com.clay.covid_19tracker.R
 import com.clay.covid_19tracker.repository.CovidRepository
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,4 +21,9 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MainViewModel::class.java)
         myHostFragment.findNavController()
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
+
 }

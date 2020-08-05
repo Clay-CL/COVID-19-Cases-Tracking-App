@@ -87,4 +87,10 @@ dependencies {
 
     //nice-spinner
     implementation 'com.github.arcadefire:nice-spinner:1.4.4'
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+    //material-design
+    implementation 'com.google.android.material:material:1.2.0'
 }
