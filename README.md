@@ -1,4 +1,4 @@
-# COVID19Tracker
+# COVID-19 Tracker
 This is an App which makes use of [The Covid Tracking Project's API](https://covidtracking.com/) to display the Daily Increase of Corona Virus Cases in the US,
 Nationwide and State-wise. 
 
