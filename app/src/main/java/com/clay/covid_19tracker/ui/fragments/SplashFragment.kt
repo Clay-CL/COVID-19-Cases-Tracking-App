@@ -24,24 +24,28 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
         viewModel = (activity as MainActivity).viewModel
 
         if (savedInstanceState != null) {
-            Timber.d("List of fragments size ${parentFragmentManager.fragments.size}")
-//            val errorDialog = parentFragmentManager.findFragmentByTag(DIALOG_TAG) as ErrorDialog?
-//            errorDialog?.apply {
-//                title = "Something Went Wrong"
-//                viewModel.stateCovidData.value?.message?.let { msg ->
-//                    this.message = msg
-//                }
-//                setYesListener {
-//                    this.dismiss()
-//                    this.dialog?.cancel()
-//                    viewModel.getCovidData()
-//                    viewModel.getStateCovidData()
-//                }
-//                setNoListener {
-//                    this.dismiss()
-//                    (activity as MainActivity).onBackPressed()
-//                }
-//            }
+            //Timber.d("List of fragments size ${parentFragmentManager.fragments.size}")
+            val errorDialog = parentFragmentManager.findFragmentByTag(DIALOG_TAG) as ErrorDialog?
+            errorDialog?.dismiss()
+            parentFragmentManager.fragments.clear()
+            errorDialog?.apply {
+                title = "Something Went Wrong"
+                viewModel.stateCovidData.value?.message?.let { msg ->
+                    this.message = msg
+                }
+                setYesListener {
+                    this.dismiss()
+                    this.dialog?.cancel()
+                    parentFragmentManager.fragments.clear()
+                    viewModel.getCovidData()
+                    viewModel.getStateCovidData()
+                }
+                setNoListener {
+                    this.dismiss()
+                    (activity as MainActivity).onBackPressed()
+                }
+            }
+
         }
 
         viewModel.stateCovidData.observe(viewLifecycleOwner, Observer { resourceData ->
@@ -52,14 +56,13 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
                 is Resource.Error -> {
                     // create a dialog box with an error
                     ErrorDialog().apply {
-                        isCancelable = true
                         title = "Something Went Wrong"
                         resourceData.message?.let { msg ->
                             this.message = msg
                         }
                         setYesListener {
                             this.dismiss()
-                            this.dialog?.cancel()
+                            parentFragmentManager.fragments.clear()
                             viewModel.getCovidData()
                             viewModel.getStateCovidData()
                         }
