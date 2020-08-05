@@ -19,6 +19,6 @@ Libraries used:
 - [Nice Spinner](https://github.com/arcadefire/nice-spinner)
 
 ### Screenshots:<br/>
-|<img src="https://github.com/Clay-CL/COVID19Tracker/blob/master/imgs/Splash%20Screen.png" height="512px"/>|
-|:--:|
-|*Splash Screen*|
+|<img src="https://github.com/Clay-CL/COVID19Tracker/blob/master/imgs/Splash%20Screen.png" height="512px"/>|<img src="https://github.com/Clay-CL/COVID19Tracker/blob/master/imgs/Splash%20Screen.png" height="512px"/>|
+|:--:|:--:|
+|*Splash Screen*|*Main Fragment*|
