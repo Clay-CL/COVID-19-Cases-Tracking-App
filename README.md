@@ -7,7 +7,7 @@ Originally it was taught by Rahul Pandey Sir, (check out his youtube tutorial [h
 This app makes use of MVVM architecture and the Retrofit Library to make API calls.
 
 The clean architecture of the app was inspired by the [MVVM news App](https://www.youtube.com/playlist?list=PLQkwcJG4YTCRF8XiCRESq1IFFW8COlxYJ) 
-by [AndroidDevs](https://github.com/androiddevs18/MVVMNewsApp)
+by [Philipp Lackner](https://github.com/androiddevs18/MVVMNewsApp)
 
 A Big Shout-out and thanks to both of them, God Bless them. Do subscribe to both their YouTube channels!
 
